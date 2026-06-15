@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: rgba(15, 23, 42, .88);
+      --accent: #38bdf8;
+      --text: #e2e8f0;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, rgba(56,189,248,.18), transparent 35%), linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+    }
+    .fade-in {
+      animation: fadeInUp .9s ease both;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .dashboard-header {
+      padding: 3rem 1rem 1.5rem;
+      text-align: center;
+    }
+    .dashboard-header h1 {
+      color: #e0f2fe;
+      letter-spacing: .05rem;
+    }
+    .dashboard-header p {
+      color: #94a3b8;
+      max-width: 680px;
+      margin: .5rem auto 0;
+    }
+    .card-glow {
+      background: var(--card);
+      border: 1px solid rgba(56,189,248,.15);
+      box-shadow: 0 20px 40px rgba(15,23,42,.35);
+    }
+    .stat-card {
+      min-height: 140px;
+      transition: transform .2s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-6px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <div class="dashboard-header fade-in">
+      <span class="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 mb-3">Analytics Dashboard</span>
+      <h1>Overview</h1>
+      <p>Clean dashboard layout without a sidebar, using Bootstrap and a subtle opening animation to bring the content into view.</p>
+    </div>
+    <div class="row g-4 fade-in" style="animation-delay:.15s;">
+      <div class="col-md-6 col-xl-3">
+        <div class="card card-glow stat-card p-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5 class="mb-2 text-info">Revenue</h5>
+              <h2 class="mb-0">$24.8K</h2>
+            </div>
+            <span class="badge bg-success">+12%</span>
+          </div>
+          <p class="mt-3 text-secondary">Monthly growth compared to last period.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="card card-glow stat-card p-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5 class="mb-2 text-info">Users</h5>
+              <h2 class="mb-0">8,142</h2>
+            </div>
+            <span class="badge bg-warning text-dark">+4.8%</span>
+          </div>
+          <p class="mt-3 text-secondary">Active users engaged this week.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="card card-glow stat-card p-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5 class="mb-2 text-info">Orders</h5>
+              <h2 class="mb-0">692</h2>
+            </div>
+            <span class="badge bg-danger">-1.9%</span>
+          </div>
+          <p class="mt-3 text-secondary">Orders completed in the last 24 hours.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="card card-glow stat-card p-4">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5 class="mb-2 text-info">Satisfaction</h5>
+              <h2 class="mb-0">92%</h2>
+            </div>
+            <span class="badge bg-primary">Stable</span>
+          </div>
+          <p class="mt-3 text-secondary">Customer satisfaction score.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4 mt-4 fade-in" style="animation-delay:.3s;">
+      <div class="col-lg-8">
+        <div class="card card-glow h-100 p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0 text-info">Performance Report</h5>
+            <button class="btn btn-outline-info btn-sm">View</button>
+          </div>
+          <div class="ratio ratio-16x9 bg-black rounded-3 overflow-hidden">
+            <div class="d-flex justify-content-center align-items-center h-100 text-secondary">Chart placeholder</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card card-glow h-100 p-4">
+          <h5 class="text-info mb-3">Tasks</h5>
+          <ul class="list-group list-group-flush text-secondary">
+            <li class="list-group-item bg-transparent border-0 px-0 py-2">Design review <span class="badge bg-info float-end">Due</span></li>
+            <li class="list-group-item bg-transparent border-0 px-0 py-2">Deploy update <span class="badge bg-success float-end">Done</span></li>
+            <li class="list-group-item bg-transparent border-0 px-0 py-2">Client meeting <span class="badge bg-warning text-dark float-end">Today</span></li>
+            <li class="list-group-item bg-transparent border-0 px-0 py-2">Report analysis <span class="badge bg-secondary float-end">Soon</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
